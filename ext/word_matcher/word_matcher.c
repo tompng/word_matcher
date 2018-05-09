@@ -96,6 +96,7 @@ VALUE word_matcher_alloc(VALUE self, VALUE arg) {
   VALUE words = rb_ary_new();
   ptr->words = words;
   ptr->root = alloc_tree_node();
+  if (TYPE(arg) != T_ARRAY) rb_raise(rb_eTypeError, "wrong type (expected Array)");
   RARRAY_PTR_USE(arg, argarray, {
     for (int i = 0; i < RARRAY_LEN(arg); i++) {
       VALUE str = StringValue(argarray[i]);
