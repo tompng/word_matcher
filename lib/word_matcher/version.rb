@@ -1,3 +1,3 @@
-module WordMatcher
+class WordMatcher
   VERSION = "0.1.0"
 end
