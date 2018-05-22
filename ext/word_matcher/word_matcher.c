@@ -58,7 +58,7 @@ VALUE rb_word_matcher_words(VALUE self) {
     tree_node *node = ptr->root->children[c];\
     if (!node) continue;\
     int j = i;\
-    if (node->edge != Qnil) { embed_code; break; }\
+    if (node->edge != Qnil) { embed_code; continue; }\
     for (j = i + 1; j < size; j++) {\
       c = str[j];\
       node = node->children[c];\

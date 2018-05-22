@@ -14,8 +14,10 @@ class WordMatcherTest < Minitest::Test
   end
 
   def test_scan
-    ng = WordMatcher.new %w[oregon orange applepie applejuice]
-    assert_equal ng.scan('pineapplepie oregonjuice'), %w[applepie oregon]
+    ng = WordMatcher.new %w[oregon orange applepie applejuice z]
+    text = 'pineapplepie oregonjuice zorangez'
+    matches = %w[applepie oregon z orange z]
+    assert_equal ng.scan(text), matches
   end
 
   def rand_text size
